@@ -1,0 +1,561 @@
+@font-face
+{
+	font-family: litsans;
+	src: url(../fonts/LitSans-Medium.otf);
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: litsans;
+}
+
+::selection{
+	background: #000;
+}
+
+html
+{
+	box-sizing: border-box;
+}
+
+*,*:before,*:after
+{
+    box-sizing: inherit;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.grid
+{
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.grid:after, .grid:before,
+.row:after, .row:before
+{
+	content: "";
+	display: table;
+}
+
+.grid:after, .row:after {clear: both;}
+
+[class*="col-"]
+{
+	width: 100%;
+	min-height: 1px;
+    float: left;
+}
+
+@media screen and (min-width:320px)
+{
+	.col-sm-1 {width: 8.33%;}
+	.col-sm-2 {width: 16.66%;}
+	.col-sm-3 {width: 25%;}
+	.col-sm-4 {width: 33.33%;}
+	.col-sm-5 {width: 41.66%;}
+	.col-sm-6 {width: 50%;}
+	.col-sm-7 {width: 58.33%;}
+	.col-sm-8 {width: 66.66%;}
+	.col-sm-9 {width: 75%;}
+	.col-sm-10 {width: 83.33%;}
+	.col-sm-11 {width: 91.66%;}
+	.col-sm-12 {width: 100%;}
+}
+
+@media screen and (min-width:640px)
+{
+	.col-md-1 {width: 8.33%;}
+	.col-md-2 {width: 16.66%;}
+	.col-md-3 {width: 25%;}
+	.col-md-4 {width: 33.33%;}
+	.col-md-5 {width: 41.66%;}
+	.col-md-6 {width: 50%;}
+	.col-md-7 {width: 58.33%;}
+	.col-md-8 {width: 66.66%;}
+	.col-md-9 {width: 75%;}
+	.col-md-10 {width: 83.33%;}
+	.col-md-11 {width: 91.66%;}
+	.col-md-12 {width: 100%;}
+}
+
+@media screen and (min-width:960px)
+{
+	.col-lg-1 {width: 8.33%;}
+	.col-lg-2 {width: 16.66%;}
+	.col-lg-3 {width: 25%;}
+	.col-lg-4 {width: 33.33%;}
+	.col-lg-5 {width: 41.66%;}
+	.col-lg-6 {width: 50%;}
+	.col-lg-7 {width: 58.33%;}
+	.col-lg-8 {width: 66.66%;}
+	.col-lg-9 {width: 75%;}
+	.col-lg-10 {width: 83.33%;}
+	.col-lg-11 {width: 91.66%;}
+	.col-lg-12 {width: 100%;}
+
+}
+/*====================Header====================*/
+#header
+{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.wrapper-header
+{
+	width: 100%;
+	height: 100vh;
+	opacity: 1;
+	overflow: hidden;
+	position: relative;
+}
+/*====================Header====================*/
+
+/*====================Kondisi====================*/
+#pagi
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg,#f2994a,#f2c94c);
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	transition: 1s ease;
+	overflow: hidden;
+}
+
+#siang
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg,#00c6ff, #0072ff);
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	transition: 1s ease;
+	overflow: hidden;
+}
+
+#sore
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg,#e65c00, #f9d423);
+	opacity: 0;
+	z-index: 1;
+	transition: 1s ease;
+	position: absolute;
+	overflow: hidden;
+}
+
+#malam
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg,#141e30, #243b55);
+	opacity: 0;
+	transition: 1s ease;
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+}
+/*====================Kondisi====================*/
+
+/*====================Orbit====================*/
+.orbit
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	transform: rotate(45deg);
+	transition: 5s linear;
+}
+
+.matahari
+{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 100%;
+	animation: rotasi 15s linear infinite;
+}
+
+.matahari img
+{
+	width: 100%;
+}
+
+.bulan
+{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-radius: 100%;
+	animation: rotasi 15s linear infinite;
+}
+
+.bulan img
+{
+	width: 100%;
+}
+/*====================Orbit====================*/
+
+
+/*====================Globe====================*/
+
+.wrapper-globe
+{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 7;
+	transform: rotate(0deg);
+	animation: rotasi 60s infinite linear;
+}
+
+.wrapper-globe img
+{
+	width: 100%;
+}
+/*====================Globe====================*/
+
+/*====================Tag Line====================*/
+.bg-header-judul
+{
+	width: 100%;
+	position: relative;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	text-align: center;
+	padding-top: 5%;
+	color: white;
+}
+
+.bg-header-judul hr
+{
+	width: 10%;
+	margin: 10px auto;
+	border: 1.5px solid #FFF;
+}
+
+.bg-header-judul p
+{
+	letter-spacing: 3px;
+}
+
+.btn-landing
+{
+	padding: 10px 15px;
+	margin: 20px 0;
+	background-color: #243B55;
+	border: 1px solid #243B55; 
+	font-family: litsans;
+	letter-spacing: 1px;
+	color: white;
+	font-size: 15px;
+	cursor: pointer;
+	transition: 1s ease;
+}
+
+.btn-landing:hover
+{
+	background-color: #141E30;
+	border: 1px solid #141E30;
+	color: white;
+	padding: 10px 30px;
+}
+
+.bg-header-judul img
+{
+	width: 20%;
+}
+
+.cloud
+{
+	margin-top: 5%;
+	width: 15%;
+	height: 200px;
+	position: absolute;
+	z-index: 10;
+	animation: awan 35s linear infinite;
+	padding-top: 30px;
+}
+
+.cloud img
+{
+	width: 100%;
+}
+
+.cloud2
+{
+	width: 15%;
+	height: 200px;
+	position: absolute;
+	z-index: 10;
+	animation: awan2 40s linear infinite;
+	padding-top: 30px;
+}
+
+.cloud2 img
+{
+	width: 100%;
+	margin: auto;
+}
+
+.cloud3
+{
+	width: 15%;
+	height: 200px;
+	position: absolute;
+	z-index: 5;
+	padding-top: 25%;
+	animation: awan 30s linear infinite;
+}
+
+.cloud3 img
+{
+	width: 100%;
+}
+
+.cloud4
+{
+	width: 15%;
+	height: 200px;
+	position: absolute;
+	z-index: 5;
+	padding-top: 20%;
+	animation: awan2 20s linear infinite;
+}
+
+.cloud4 img
+{
+	width: 100%;
+}
+
+
+
+
+@keyframes awan
+{
+	0%
+	{
+		left: 0;
+	}
+	50%
+	{
+		left: 85%;
+	}
+	100%
+	{
+		left: 0;
+	}
+}
+
+@keyframes awan2
+{
+	0%
+	{
+		right: 0;
+	}
+	50%
+	{
+		right: 85%;
+	}
+	100%
+	{
+		right: 0;
+	}
+}
+
+
+
+@keyframes rotasi
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+
+
+@media only screen and (max-width:1000px)
+{
+	/*====================Tag Line====================*/
+	.bg-header-judul
+	{
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 10;
+		text-align: center;
+		color: white;
+	}
+
+	.bg-header-judul hr
+	{
+		width: 20%;
+		margin: 10px auto;
+		border: 1.5px solid #FFF;
+	}
+
+	.bg-header-judul p
+	{
+		letter-spacing: 3px;
+	}
+
+	.btn-landing
+	{
+		padding: 10px 15px;
+		margin: 20px 0;
+		background-color: #243B55;
+		border: 1px solid #243B55; 
+		font-family: litsans;
+		letter-spacing: 1px;
+		color: white;
+		font-size: 15px;
+		cursor: pointer;
+		transition: 1s ease;
+	}
+
+	.btn-landing:hover
+	{
+		background-color: #141E30;
+		border: 1px solid #141E30;
+		color: white;
+		padding: 10px 30px;
+	}
+
+	.bg-header-judul img
+	{
+		width: 50%;
+	}
+
+	.cloud
+	{
+		width: 15%;
+		height: 200px;
+		position: absolute;
+		z-index: 10;
+		animation: awan 35s linear infinite;
+		bottom: 0;
+	}
+
+	.cloud img
+	{
+		width: 100%;
+	}
+
+	.cloud2
+	{
+		width: 15%;
+		height: 200px;
+		position: absolute;
+		z-index: 10;
+		animation: awan2 40s linear infinite;
+		bottom: 5%;
+	}
+
+	.cloud2 img
+	{
+		width: 100%;
+		margin: auto;
+	}
+
+	.cloud3
+	{
+		width: 15%;
+		height: 200px;
+		position: absolute;
+		z-index: 5;
+		animation: awan 30s linear infinite;
+		bottom: 0;
+	}
+
+	.cloud3 img
+	{
+		width: 100%;
+	}
+
+	.cloud4
+	{
+		width: 15%;
+		height: 200px;
+		position: absolute;
+		z-index: 5;
+		animation: awan2 20s linear infinite;
+		bottom: 5%;
+	}
+
+	.cloud4 img
+	{
+		width: 100%;
+	}
+
+	/*====================Orbit====================*/
+	.orbit
+	{
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		transform: rotate(45deg);
+		transition: 5s linear;
+	}
+
+	.matahari
+	{
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		border-radius: 100%;
+		animation: rotasi 15s linear infinite;
+	}
+
+	.matahari img
+	{
+		width: 100%;
+	}
+
+	.bulan
+	{
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		border-radius: 100%;
+		animation: rotasi 15s linear infinite;
+	}
+
+	.bulan img
+	{
+		width: 100%;
+	}
+	/*====================Orbit====================*/	
+}

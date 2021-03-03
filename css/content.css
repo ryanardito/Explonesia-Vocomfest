@@ -1,0 +1,1375 @@
+@font-face
+{
+	font-family: litsans;
+	src: url(../fonts/LitSans-Medium.otf);
+}
+
+@font-face
+{
+	font-family: open-sans;
+	src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face
+{
+	font-family: freestyle-script;
+	src: url(../fonts/freestylescript.TTF);
+}
+
+@font-face
+{
+	font-family: raleway;
+	src: url(../fonts/Raleway-Regular.ttf);
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: litsans;
+	position: relative;
+}
+
+::selection{
+	background: whitesmoke;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+html
+{
+	box-sizing: border-box;
+}
+
+*,*:before,*:after
+{
+    box-sizing: inherit;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.grid
+{
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.grid:after, .grid:before,
+.row:after, .row:before
+{
+	content: "";
+	display: table;
+}
+
+.grid:after, .row:after {clear: both;}
+
+[class*="col-"]
+{
+	width: 100%;
+	min-height: 1px;
+    float: left;
+}
+
+@media screen and (min-width:320px)
+{
+	.col-sm-1 {width: 8.33%;}
+	.col-sm-2 {width: 16.66%;}
+	.col-sm-3 {width: 25%;}
+	.col-sm-4 {width: 33.33%;}
+	.col-sm-5 {width: 41.66%;}
+	.col-sm-6 {width: 50%;}
+	.col-sm-7 {width: 58.33%;}
+	.col-sm-8 {width: 66.66%;}
+	.col-sm-9 {width: 75%;}
+	.col-sm-10 {width: 83.33%;}
+	.col-sm-11 {width: 91.66%;}
+	.col-sm-12 {width: 100%;}
+}
+
+@media screen and (min-width:640px)
+{
+	.col-md-1 {width: 8.33%;}
+	.col-md-2 {width: 16.66%;}
+	.col-md-3 {width: 25%;}
+	.col-md-4 {width: 33.33%;}
+	.col-md-5 {width: 41.66%;}
+	.col-md-6 {width: 50%;}
+	.col-md-7 {width: 58.33%;}
+	.col-md-8 {width: 66.66%;}
+	.col-md-9 {width: 75%;}
+	.col-md-10 {width: 83.33%;}
+	.col-md-11 {width: 91.66%;}
+	.col-md-12 {width: 100%;}
+}
+
+@media screen and (min-width:960px)
+{
+	.col-lg-1 {width: 8.33%;}
+	.col-lg-2 {width: 16.66%;}
+	.col-lg-3 {width: 25%;}
+	.col-lg-4 {width: 33.33%;}
+	.col-lg-5 {width: 41.66%;}
+	.col-lg-6 {width: 50%;}
+	.col-lg-7 {width: 58.33%;}
+	.col-lg-8 {width: 66.66%;}
+	.col-lg-9 {width: 75%;}
+	.col-lg-10 {width: 83.33%;}
+	.col-lg-11 {width: 91.66%;}
+	.col-lg-12 {width: 100%;}
+
+}
+/*=========================Flickity==================*/
+/* no circle */
+.flickity-button {
+  background: transparent !important;
+}
+/* big previous & next buttons */
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+}
+/* icon color */
+.flickity-button-icon {
+  fill: white !important;
+}
+/*=========================Flickity==================*/
+
+/*=========================Navbar==================*/
+.navbar
+{
+	width: 100%;
+	background: #1c92d2;
+	height: 85px;
+	position: absolute;
+	top: 100vh;
+	z-index: 99;
+}
+
+.navbar .img
+{
+	width: 200px;
+	height: 70px;
+	margin-right: 0;
+	z-index: 99;
+	margin-top: 10px;
+}
+
+.navbar img
+{
+	width: 80%;
+}
+
+.navbar-fixed
+{
+	position: fixed;
+	top: 0;
+}
+
+/*=====================Burger Menu===============  */
+
+.wrapper-menu {
+	margin-right: -50px;
+	margin-top: 30px;
+	position: relative;
+  	width: 30px;
+  	height: 30px;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: space-between;
+  	cursor: pointer;
+  	transition: transform 330ms ease-out;
+	z-index: 99;
+}
+
+.wrapper-menu.open {
+  transform: rotate(-45deg);
+}
+
+.line-menu {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  height: 6px;
+  z-index: 80;
+}
+
+.line-menu.half {
+  width: 50%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.line-menu.start {
+  transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: right;
+}
+
+.open .line-menu.start {
+  transform: rotate(-90deg) translateX(3px);
+}
+
+.line-menu.end {
+  align-self: flex-end;
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: left;
+}
+
+.open .line-menu.end {
+  transform: rotate(-90deg) translateX(-3px);
+}
+
+/* sidenav */
+.sidenav{
+	position: fixed;
+  	left: 0;
+	top: -10000px;
+	width: 100%;
+	height: 100vh;
+	background-color: #040020;
+	transition: .5s;
+	padding: 20px;
+	text-align: center;
+	box-sizing: border-box;
+	box-shadow: 0px 2px 4px rgba(0,0,0,.5);
+	z-index: 998;
+	transition: .5xs;
+}
+
+.sidenav .menu{
+	margin: 0;
+}
+
+.sidenav .menu li{
+	list-style: none;
+	font-family: sans-serif;
+}
+
+.sidenav .menu li a{
+	display: block;
+	padding: 30px 0;
+	text-transform: uppercase;
+	color: #00adef;
+	font-size: 25px;
+	text-decoration: none;
+	transition: .3s;
+	font-family: litsans;
+	letter-spacing: 2px;
+}
+
+.sidenav .menu li a:hover{
+	background-color: #00adef;
+	color: #fff;
+}
+
+/* menu-icon > active */
+.sidenav.active{
+  top: 85px;
+}
+/*=========================Navbar==================*/
+
+/*=========================Hero==================*/
+.header
+{
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.wrapper-background
+{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#ulundanu
+{
+	background-image: url(../img/ulundanu.jpg);
+}
+
+#ulundanu .text-content
+{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 10;
+	text-align: center;
+	color: white;
+}
+
+#ulundanu .text-content img
+{
+	width: 25%;
+}
+
+#ulundanu .text-content hr
+{
+	width: 10%;
+}
+
+.text-content hr
+{
+	width: 10%;
+	margin: 10px auto;
+	box-shadow: 1px 1px 1px #111;
+	border: 1.5px solid #fff;
+}
+
+.text-content
+{
+	text-align: center;
+	color: white;
+	position: absolute;
+}
+
+.text-content h1
+{
+	font-size: 50px;
+	text-shadow: 1px 1px 1px #111;
+	letter-spacing: 3px;
+}
+
+.text-content button
+{
+	padding: 5px 10px;
+	font-family: litsans;
+	margin-top: 20px;
+	color: #2B3C53;
+	width: 135px;
+	height: 35px;
+	background: #EAEAEA;
+	border: 1px solid #EAEAEA;
+	letter-spacing: 2px;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.text-content button:hover
+{
+	background-color: #141E30;
+	border: 1px solid #141E30;
+	color: white;
+	width: 150px;
+}
+
+#patung .text-content
+{
+	top: 40%;
+	left: 5%;
+}
+
+.text-content hr
+{
+	width: 50%;
+}
+
+.text-content p
+{
+	text-align: center;
+	letter-spacing: 3px;
+	margin-top: 20px;
+	font-size: 18px; 
+	padding: 0 20px;
+	text-shadow: 1px 1px 5px #111;
+}
+
+#patung
+{
+	background-image: url(../img/Indonesia-Bali-balinese-statue-800x496.jpg);
+}
+
+#gadang .text-content
+{
+	top: 40%;
+	left: 0;
+	right: 0;
+}
+
+#gadang
+{
+	background-image: url(../img/Rumah-Gadang.jpg);
+	background-position: bottom center;
+}
+
+#jogja .text-content
+{
+	top: 40%;
+	left: 5%;
+}
+
+#jogja
+{
+	background-image: url(../img/Borobudur.jpg);
+	background-position: bottom center;
+}
+
+#komodo .text-content
+{
+	top: 30%;
+	left: 5%;
+}
+
+#komodo
+{
+	background-image: url(../img/komodo.jpg);
+}
+
+#raja-ampat
+{
+	background-image: url(../img/rajaampat.jpg);
+}
+
+#raja-ampat .text-content
+{
+	left: 0;
+	right: 0;
+	top: 30%;
+}
+/*=========================Hero==================*/
+
+/*=========================Feature===============*/
+section#feature
+{
+	padding-top: 75px; 
+	margin-bottom: 50px;
+	height: auto;
+}
+
+.wrapper
+{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.bg-content
+{
+	width: 100%;
+	height: auto;
+	margin-bottom: 35px;
+	padding: 0;
+}
+
+.content
+{
+	width: 80%;
+	height: 300px;
+	background-color: #fff;
+	position: relative;
+ 	margin-top: 0px;
+	border-radius: 7px;
+}
+
+.caption
+{
+	padding : 50px 0;
+	color: #1c92d2;
+	text-align: center;
+	font-size: 40px;
+	letter-spacing: 2px;
+}
+
+.content .c4
+{
+	box-shadow: 0px 1px 15px -2px rgba(0,0,0,0.5);
+	background: whitesmoke;
+	text-align: center;
+	border-radius: 5px;
+	transition: .3s;
+	transform: scale(.9);
+}
+
+.content .c4 i
+{
+	font-size: 50px;
+	padding-top: 40px;
+	color: #1c92d2;
+}
+
+.content .c4 h4
+{
+	font-size: 25px;
+	padding: 35px 10px;
+	color:#1c92d2;
+	letter-spacing: 1px;
+}
+
+.content .c4 p
+{
+	padding: 0px 30px 20px;
+	color: #a7a5a5;
+	font-family: open-sans;
+	line-height: 30px;
+}
+
+.content .c4:hover
+{
+	transform: scale(1.01);
+	box-shadow: 1px 1px 20px -5px;
+	background:linear-gradient(45deg, #56CCF2, #2F80ED);
+}
+
+.content .c4:hover i, .content .c4:hover h4, .content .c4:hover p
+{
+	color: #fff;
+}
+/*===============================Feature==========================*/
+
+/*===============================Maps==============================*/
+#wrapper-map
+{
+	width: 100%;
+	height: auto;
+	background: whitesmoke;
+	padding: 50px 0;
+	padding-bottom: 0;
+}
+
+.compare
+{
+	width: 50%;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.most
+{
+	height: 100px;
+	width: 25%;
+	float: left;
+}
+
+.less
+{
+	height: 100px;
+	width: 25%;
+	float: left;
+}
+
+.pallete
+{
+	height: 30px;
+	width: 50%;
+	background: linear-gradient(90deg,#317256,#52BF90);
+	margin-top: 35px;
+	float: left;
+}
+
+.compare h4
+{
+	line-height: 100px;
+	color: #666;
+	text-align: center;
+}
+/*===============================Maps==============================*/
+
+/*===============================Gallery==============================*/
+
+.bg-gallery{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+.judul-gallery{
+	text-align: center;
+	letter-spacing: .05rem;
+	padding: 10px;
+}
+
+.judul-gallery h2{
+	color: #333;
+}
+
+.judul-gallery h4{
+	color: #666;
+	padding-top: 10px;
+	font-size: .9rem;
+}
+
+.divider{
+	width: 10%;
+	margin: 15px auto;
+	border-color: #d1d1d1;
+}
+
+.gallery-left{
+	margin: 5px 10px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/gwk.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 280px;
+	overflow: hidden;
+}
+
+.gallery-left-2{
+	margin: 5px 10px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/ntt.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 280px;
+	overflow: hidden;
+}
+
+.text-gallery-left{
+	width: 100%;
+	height: 18%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	letter-spacing: .09rem;
+	padding: 10px 15px;
+	transition: 0.5s ease;
+	background-image: linear-gradient(to bottom, #7b5a5a00, #211f1e);
+}
+
+.text-gallery-left h3{
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.text-gallery-left p{
+	font-size: .8rem;
+	margin-bottom: 10px;
+}
+
+.gallery-left:hover .text-gallery-left,
+.gallery-left-2:hover .text-gallery-left
+{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.text-gallery-left span{
+	font-size: .6rem;
+	width: 100%;
+	font-family: raleway;
+}
+
+.gallery-mid{
+	margin: 5px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/wakatobi.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 183px;
+	overflow: hidden;
+}
+
+.gallery-mid-2{
+	margin: 5px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/borobudur.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 183px;
+	overflow: hidden;
+}
+
+.gallery-mid-3{
+	margin: 5px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/komodo.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 183px;
+	overflow: hidden;
+}
+
+.text-gallery-mid{
+	width: 100%;
+	height: 25%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: #fff;
+	letter-spacing: .09rem;
+	padding: 10px 15px;
+	transition: 0.5s ease;
+	background-image: linear-gradient(to bottom, #7b5a5a00, #211f1e);
+}
+
+.text-gallery-mid h3{
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.text-gallery-mid p{
+	font-size: .8rem;
+	margin-bottom: 10px;
+}
+
+.gallery-mid:hover .text-gallery-mid,
+.gallery-mid-2:hover .text-gallery-mid,
+.gallery-mid-3:hover .text-gallery-mid
+{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.text-gallery-mid span{
+	font-size: .6rem;
+	width: 100%;
+	font-family: raleway;
+}
+
+.gallery-right{
+	margin: 5px 10px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/prambanan.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 280px;
+	overflow: hidden;
+}
+
+.gallery-right-2{
+	margin: 5px 10px;
+	position: relative;
+	cursor: pointer;
+	transition: .5s all;
+	background-image: url(../img/gallery/papua.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 280px;
+	overflow: hidden;
+}
+
+
+.text-gallery-right{
+	width: 100%;
+	height: 18%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #fff;
+	text-align: right;
+	letter-spacing: .09rem;
+	padding: 10px 15px;
+	transition: 0.5s ease;
+	background-image: linear-gradient(to bottom, #7b5a5a00, #211f1e);
+}
+
+.text-gallery-right h3{
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.text-gallery-right p{
+	font-size: .8rem;
+	margin-bottom: 10px;
+}
+
+.gallery-right:hover .text-gallery-right,
+.gallery-right-2:hover .text-gallery-right
+{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.text-gallery-right span{
+	font-size: .6rem;
+	width: 100%;
+	font-family: raleway;
+}
+/*===============================Gallery==============================*/
+
+/*===============================Subscription==========================*/
+
+.subscription
+{
+	width: 100%;
+	background-image: url(../img/bg-subs.jpg);
+	background-size: cover;
+	background-position:center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 400px;
+	text-align: center;
+	padding-top: 100px !important;
+	padding: 50px;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.subscription h1
+{
+	margin-bottom: 10px;
+	letter-spacing: 1px;
+	font-size: 35px;
+}
+
+.subscription p
+{
+	letter-spacing: 1px;
+	margin-bottom: 50px;
+}
+
+.subscription-mail
+{
+	width: 50%;
+	margin: 0;
+	padding: 10px 15px;
+	border: none;
+	border-bottom: 3px solid #1c92d2;
+	font-family: litsans;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.subscription-mail::placeholder
+{
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: litsans;
+	color: #666;
+}
+
+.subscription-submit
+{
+	padding: 10px 30px;
+	background: #1c92d2;
+	border-bottom: 3px solid #4183D7 !important;
+	border: none;
+	color: white;
+	cursor: pointer;
+	transition: 0.5s ease;
+	font-family: open-sans;
+}
+
+.subscription-submit:hover
+{
+	background: #1e73c9;
+	border-bottom: 3px solid #1e73c9 !important;
+}
+/*======================Subscription===================*/
+
+/*======================About Us===================*/
+.about-us
+{
+	width: 90%;
+	height: auto;
+	margin-bottom: 50px;
+}
+
+.about-us-content
+{
+	height: 300px;
+	color: #666;
+	text-align: center;
+	line-height: 25px;
+	padding: 20px;
+}
+
+.about-us-content h4
+{
+	text-align: center;
+	font-size: 35px;
+	margin-top: 50px;
+	color: black;
+
+}
+
+.about-us-content p
+{
+	margin-top: 20px;
+}
+
+.about-us-content.foto
+{
+	background-image: url(../img/three-people.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/*======================About Us===================*/
+
+.bg-contact
+{
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+
+.contact
+{
+	width: 100%;
+	height: 600px;
+	background-image: url(../img/orang-ngukir.jpg);
+	background-size: cover;
+}
+
+.contact h1
+{
+	text-align: center !important;
+	margin-top: 50px;
+	color: #fff;
+}
+
+.contact-kanan
+{
+	width: 65%;
+	height: 360px;
+	margin-top: 50px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.57)
+}
+
+.contact-kanan input
+{
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #fff;
+	font-family: open-sans;
+	letter-spacing: 1px;
+	font-weight: 600;
+	background-color: transparent;
+	color: #fff;
+}
+
+.contact-kanan input::placeholder
+{
+	color: #fff;
+}
+
+.contact-kanan .name
+{
+	width: 40%;
+	padding: 5px 10px;
+	margin: 20px;
+	height: 40px;
+}
+
+.contact-kanan .email
+{
+	width: 89%;
+	padding: 5px 10px;
+	margin: 20px;
+	height: 40px;
+}
+
+.contact-kanan textarea
+{
+	margin: 20px;
+	padding: 5px 10px;
+	min-width: 88%;
+	max-width: 88%;
+	min-height: 30%;
+	max-height: 30%;
+	border: none;
+	letter-spacing: 1px;
+	border-bottom: 2px solid #fff;
+	outline: none;
+	font-weight: 600;
+	background-color: transparent;
+	color: #fff;
+	font-family: open-sans;
+}
+
+.contact-kanan textarea::placeholder
+{
+	color: #fff;
+}
+
+.contact-kanan .button
+{
+	padding: 10px 175px;
+	background-color: red;
+	color: #000;
+	text-decoration: none;
+	background-color: #fff;
+	letter-spacing: 2px;
+	border-radius: 4px;
+}
+/*======================Feature=============*/
+
+/*======================Footer==============*/
+
+.bg-footer
+{
+	width: 100%;
+	height: 170px;
+	background-color: #1c92d2 !important;
+	margin: 0;
+	padding: 0;
+}
+
+.footer
+{
+	width: 80%;
+	height: 170px;
+	text-align: center;
+}
+
+.footer h1
+{
+	color: #fff;
+	letter-spacing: 2px;
+	padding: 20px 10px 10px 10px;
+}
+
+.footer p
+{
+	color: #fff;
+	font-family: open-sans;
+	padding: 10px;
+}
+
+.footer i
+{
+	color: #fff;
+	padding: 10px;
+	font-size: 30px;
+}
+
+.bg-footer-2
+{
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	background-color: #1d7bad;
+	font-family: freestyle-script;
+}
+
+.bg-footer-2 p
+{
+		color: #fff;
+		font-size: 15px;
+		text-align: center;
+		letter-spacing: 1px;
+		line-height: 25px;
+}
+
+.bg-footer-2 i
+{
+	color: #ff4fc8;
+}
+
+/*======================Footer==============*/
+
+/*=========================Phone==================*/
+@media screen and (max-width:640px){
+	#ulundanu
+	{
+		background-image: url(../img/ulundanu.jpg);
+	}
+
+	#ulundanu .text-content
+	{
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		color: white;
+	}
+
+	#ulundanu .text-content img
+	{
+		width: 50%;
+	}
+
+	#ulundanu .text-content hr
+	{
+		width: 10%;
+	}
+
+	.text-content hr
+	{
+		width: 10%;
+		margin: 10px auto;
+		box-shadow: 1px 1px 1px #111;
+		border: 1.5px solid #fff;
+	}
+
+	.text-content
+	{
+		text-align: center;
+		color: white;
+		position: absolute;
+	}
+
+	.text-content h1
+	{
+		font-size: 40px;
+		text-shadow: 1px 1px 1px #111;
+		letter-spacing: 3px;
+	}
+
+	.text-content button
+	{
+		padding: 5px 10px;
+		font-family: litsans;
+		margin-top: 20px;
+		color: #2B3C53;
+		width: 135px;
+		height: 35px;
+		background: #EAEAEA;
+		border: 1px solid #EAEAEA;
+		letter-spacing: 2px;
+		cursor: pointer;
+		transition: 0.5s ease;
+	}
+
+	.text-content button:hover
+	{
+		background-color: #141E30;
+		border: 1px solid #141E30;
+		color: white;
+		width: 150px;
+	}
+
+	#patung .text-content
+	{
+		top: 35%;
+		left: 0;
+		right: 0;
+	}
+
+	.text-content hr
+	{
+		width: 50%;
+	}
+
+	.text-content p
+	{
+		text-align: center;
+		letter-spacing: 3px;
+		margin-top: 20px;
+		font-size: 18px; 
+		padding: 0 20px;
+		text-shadow: 1px 1px 5px #111;
+	}
+
+	#patung
+	{
+		background-image: url(../img/Indonesia-Bali-balinese-statue-800x496.jpg);
+	}
+
+	#gadang .text-content
+	{
+		top: 35%;
+		left: 0;
+		right: 0;
+	}
+
+	#gadang
+	{
+		background-image: url(../img/Rumah-Gadang.jpg);
+		background-position: bottom center;
+	}
+
+	#jogja .text-content
+	{
+		top: 35%;
+		left: 0;
+		right: 0;
+	}
+
+	#jogja
+	{
+		background-image: url(../img/Borobudur.jpg);
+		background-position: bottom center;
+	}
+
+	#komodo .text-content
+	{
+		top: 35%;
+		left: 0;
+		right: 0;
+	}
+
+	#komodo
+	{
+		background-image: url(../img/komodo.jpg);
+	}
+
+	#raja-ampat
+	{
+		background-image: url(../img/rajaampat.jpg);
+	}
+
+	#raja-ampat .text-content
+	{
+		left: 0;
+		right: 0;
+		top: 35%;
+	}
+
+	.flickity-button {
+		display: none;
+	}	
+
+	.contact-kanan .button
+	{
+		padding: 10px 100px;
+	}
+
+	.contact-kanan .name
+	{
+		width: 80%;
+		text-align: center;
+	}
+
+	.contact-kanan .email
+	{
+		width: 80%;
+		text-align: center;
+	}
+	.contact-kanan textarea
+	{
+		min-width: 80%;
+		max-width: 80%;
+		min-height: 20%;
+		max-height: 20%;
+		text-align: center;
+	}
+
+	.contact-kanan
+	{
+		width: 90%;
+		height: 400px;
+	}
+
+	.contact h1
+	{
+		font-size: 25px;
+		padding: 5px 10px;
+	}
+
+	.pict
+	{
+		height: 300px;
+	}
+
+	.compare
+	{
+		width: 80%;
+		height: 100px;
+		margin-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width:1300px){
+	.contact-kanan
+	{
+		width: 90%;
+		height: 400px;
+	}
+	.subscription-mail
+	{
+		width: 65%;
+		margin: 0;
+		padding: 10px 15px;
+		border: none;
+		border-bottom: 3px solid #1c92d2;
+		font-family: litsans;
+		letter-spacing: 1px;
+		text-align: center;
+	}
+
+	/*Navbar*/
+	.navbar .img
+	{
+	padding-top: 15px;
+	width: 100px;
+	margin-right: -10px;
+	}
+
+	.navbar img
+	{
+	width: 100%;
+	position: relative;
+	z-index: 999;
+	}
+
+
+	.wrapper-menu {
+	margin-right: 20px;
+	margin-top: 30px;
+	position: relative;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	cursor: pointer;
+	transition: transform 330ms ease-out;
+	z-index: 999;
+	}
+
+	.line-menu {
+	background-color: #fff;
+	border-radius: 5px;
+	width: 100%;
+	height: 4px;
+	}
+
+	.line-menu.half {
+	width: 50%;
+	margin-left: 0;
+	margin-right: 0;
+	}
+
+	.sidenav .menu li a{
+	display: block;
+	padding: 20px 0;
+	text-transform: uppercase;
+	color: #00adef;
+	font-size: 15px;
+	text-decoration: none;
+	transition: .3s;
+	font-family: litsans;
+	letter-spacing: 2px;
+	}
+}
+/*=========================Phone==================*/
